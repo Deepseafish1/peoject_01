@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./image/A01.jpg) no-repeat center center / cover;
+            transition:all 1s;
+        }
+        .login{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 700px;
+            height: 360px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            border-left: 2px solid rgba(255, 255, 255, 0.7);
+            border-top: 2px solid rgba(255, 255, 255, 0.7);
+            /* 背景磨砂效果 */
+            backdrop-filter: blur(5px);
+            /* 盒子投影 */
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+        }
+        .imgBox img{
+            width: 150px;
+            border-radius: 50%;
+            /* 改变图片颜色饱和度 */
+            filter: saturate(80%);
+        }
+
+
+        /* 改变主轴，使其在垂直方向 */
+
+        /* .txtBox{
+            display: flex;
+            flex-direction: column;
+        } */
+        .txtBox > *{
+            display: block;
+        }
+        /* 改变主轴，使其在垂直方向 */
+
+
+        .txtBox{
+            margin-left: 30px;
+        }
+
+        .txtBox input{
+            width: 300px;
+            height: 36px;
+            outline: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            outline: none;
+            font-size: 16px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            border: 0;
+            background-color: #fff;
+        }
+        .txtBox input:last-child{
+            padding-left: 0;
+        }
+        .txtBox h3{
+            color: #fff;
+            font-size: 22px;
+        }
+        .txtBox input[type="submit"]{
+            color: fff;
+            cursor: pointer;
+            border: 0;
+            background-color: rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- 整体背景盒子 -->
+    <div class="container">
+        <div class="login">
+            <div class="imgBox">
+                <img src="./image/tx2.jpg" alt="">
+            </div>
+            <div class="txtBox">
+                <h3>welcome</h3>
+                <input type="text" placeholder="请输入账号">
+                <input type="text" placeholder="请输入密码" id="pwd">
+                <input type="submit" value="登录">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const bgd = document.querySelector('.container')
+        let num= 1
+        // 打开网页立即显示背景图
+        const pwd = document.querySelector('#pwd')
+
+        bgd.style.backgroundImage = `url(./image/A01.jpg)`  
+
+
+        let timer = setInterval(function(){
+            num++
+            if(num >= 9)
+            {
+                num = 1
+            }
+            bgd.style.backgroundImage = `url(./image/A0${num}.jpg)`  
+        },5000)
+
+
+        //密码显示与隐藏
+        
+    </script>
+</body>
+</html>
